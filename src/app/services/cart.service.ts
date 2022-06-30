@@ -17,7 +17,6 @@ export class CartService implements OnInit {
   addToCart(data:ProductType){
     var items=JSON.parse(localStorage.getItem('cartitems')!) as {id:number,product:ProductType,quantity:number}[] ;
     this.cartitems=items||[];
-    debugger;
     var flag=false;
     for (let it of this.cartitems){
         if(it.id===data.productId){
@@ -36,7 +35,6 @@ export class CartService implements OnInit {
   removefromcart(data:ProductType){
     var items=JSON.parse(localStorage.getItem('cartitems')!) as {id:number,product:ProductType,quantity:number}[] ;
     this.cartitems=items||[];
-    debugger;
     var index=-1;
     for (let it of this.cartitems){
         if(it.id===data.productId){

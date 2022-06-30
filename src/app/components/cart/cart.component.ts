@@ -38,7 +38,6 @@ gettotal(){
       this.selected=currency;
       });
       this.rates=await this.currencyService.fetchrates();
-    debugger;
   }
 additem(data:ProductType){
   this.cartservice.addToCart(data);
