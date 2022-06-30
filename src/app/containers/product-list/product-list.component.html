@@ -1,0 +1,11 @@
+<p><app-header></app-header><button [routerLink]="['/cart']">CART</button></p>
+<div *ngIf="codes$|async;let selected">
+    <div *ngFor="let item of plist">
+        <app-products 
+        [currencyCode]="selected"
+        [rates]="rates"
+        (btnClick)="addItem($event)" [data]="item"></app-products>
+    </div>
+</div>
+
+

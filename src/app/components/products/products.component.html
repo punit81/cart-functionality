@@ -1,0 +1,22 @@
+<div>
+    <img [routerLink]="['/detail',data.productId]"
+    [queryParams]="{size:'medium', rating:4}"
+     [src]="data.productImage"/>
+    <h3>{{data.productName| uppercase}}</h3>
+   <!-- <h4>{{data.productPrice|currency:"INR":"code":"7.1-1"}}</h4>
+   Never use a function call in html to display data-->
+    <!--{{discountCalculation()}}
+{{data.productPrice|conversion|currency|discount}}-->
+   <!-- {{data.productPrice|conversion: currencyCode|
+        currency: currencyCode:"symbol":"7.1-1"}}-->
+     <mark>   {{data.productPrice|conversion: currencyCode:rates|
+            currency: currencyCode}}</mark>
+    <button (click)="notifyParent()" *ngIf="data.productStock>0 ; else stock" >Add to Cart</button>
+</div>
+<!-- ng-template works as a else block for *ngIf and can be pointed 
+    by id you provide with a has symbol eg #stock os id of 
+else component and has been pointed by else in *ngif block -->
+<ng-template #stock>
+    <p>Out of Stock</p>
+</ng-template>
+<!-- *ng-switch for switch case-->

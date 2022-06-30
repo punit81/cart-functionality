@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<button (click)="removeall()">Remove All</button>
+<button [routerLink]="['/products']" >Products</button>
+<p><mark>Total Payable amount:{{gettotal()|conversion: selected:rates|
+    currency:selected}}</mark></p>
+<div *ngFor="let item of cartitemslist">
+    <img  [src]="item.product.productImage"/>
+   
+    <p> <mark>Product Name:{{item.product.productName}}</mark></p> 
+    <p>Quantity:<button (click)="additem(item.product)">+</button><input type="text" [value]="item.quantity" readonly="readonly"/><button (click)="removefromcart(item.product)">-</button></p> 
+    <p><mark>Price:{{item.product.productPrice*item.quantity|conversion: selected:rates|
+        currency:selected}}</mark></p>
+</div>
