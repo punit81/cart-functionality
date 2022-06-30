@@ -1,8 +1,11 @@
 <div>
-    <img [routerLink]="['/detail',data.productId]"
-    [queryParams]="{size:'medium', rating:4}"
+    <!--<img [routerLink]="['/detail',data.productId]"
+    [queryParams]="{size:'medium', rating:4}"-->
+    <img
      [src]="data.productImage"/>
-    <h3>{{data.productName| uppercase}}</h3>
+     <div class="prodnametext">
+        <h3>{{data.productName| uppercase}}</h3>
+     </div>
    <!-- <h4>{{data.productPrice|currency:"INR":"code":"7.1-1"}}</h4>
    Never use a function call in html to display data-->
     <!--{{discountCalculation()}}

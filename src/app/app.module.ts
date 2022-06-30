@@ -13,6 +13,9 @@ import { ConversionPipe } from './pipes/conversion.pipe';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HeaderComponent } from './components/header/header.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SortListPipe } from './pipes/sort-list.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 //import { HttpLoaderInterceptor } from './loader/http-loader.interceptor';
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { HeaderComponent } from './components/header/header.component';
     CurrencyComponent,
     CartComponent,
     HeaderComponent,
+    SortListPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,7 @@ import { HeaderComponent } from './components/header/header.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

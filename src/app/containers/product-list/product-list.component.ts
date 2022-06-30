@@ -17,9 +17,16 @@ import { CartService } from 'src/app/services/cart.service';
 export class ProductListComponent implements OnInit ,OnDestroy{
   selected!:string;
   rates!:any;
+  //pagination components
+  p: number = 1;
+  count: number = 20;
   //currencysubs$!:Subscription;
   codes$!:Observable<string>;
   plist!:ProductType[];
+  //sorting
+  sortbyorder:string="";
+  //filtering
+  filterString: string = "";
   constructor(private productService:ProductService,private router:Router,private currencyService:CurrencyService,private authentication:AuthenticationService,private cartservice:CartService) {
     this.codes$=this.currencyService.currencyObservable;
    }
@@ -55,5 +62,8 @@ export class ProductListComponent implements OnInit ,OnDestroy{
   }
   gotocart(){
     this.router.navigate(['/cart']);
+  }
+  async setSortbyorder(event: any, sortParam: string){
+   this.sortbyorder=sortParam;
   }
 }

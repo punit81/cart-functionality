@@ -19,17 +19,19 @@ export class CurrencyService {
     this.currencySubject.next(this._code);
   }
   async fetchcodes(){
-     const response=await fetch('https://api.apilayer.com/exchangerates_data/symbols?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx');
+   //  const response=await fetch('https://api.apilayer.com/exchangerates_data/symbols?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx');
+   const response=await fetch('https://api.apilayer.com/fixer/symbols?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx');
     const data = await response.json(); 
     //for actual uncomment above 2 lines and comment below line
-    //const data = {symbols:{INR:"RUPPEE",USD:"US DOLLAR",CAD:"CANADIAN DOLLAR",JPY:"JAPANESE YEN",GBP:"POUND"}};
+    //const data = {symbols:{INR:"RUPPEE",USD:"US DOLLAR",CAD:"CANADIAN DOLLAR",JPY:"JAPANESE YEN",GBP:"POUND"}};//not to be commited
     return Object.keys(data.symbols);
   }
   async fetchrates(){
-    const response=await fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx&base=INR');
+  //  const response=await fetch('https://api.apilayer.com/exchangerates_data/latest?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx&base=INR');
+    const response=await fetch('https://api.apilayer.com/fixer/latest?apikey=0CdRro1HlUqy5OVJksjZpVCXCy5vCBGx&base=INR');
      const data = await response.json();
      //for actual uncomment above 2 lines and comment below line
-     //const data ={rates:{INR:1,USD:0.013,CAD:0.016,JPY:1.72,GBP:0.010}};
+    // const data ={rates:{INR:1,USD:0.013,CAD:0.016,JPY:1.72,GBP:0.010}};//not to be commited
      return data.rates;
    }
 
