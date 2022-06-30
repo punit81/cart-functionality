@@ -32,3 +32,39 @@ Note:    This project is mandatory. The updated code should be uploaded to a sub
 Regards,
 Learning Enablement.
 
+
+
+
+
+
+--------------------------------------------------------------------------Extra-------------------------------------------------
+
+Command to build war file:
+
+in index.html change  <base href="/"> to <base href="./">
+
+in VS code CMD:
+ng build --configuration production
+
+
+then :
+
+go to cart-functionality\dist\cart-functionality folder
+
+Launch CMD and run command 
+
+jar cvf dist.war *.*
+
+copy dist.war and asset folder in tomcat webapps folder
+
+launch go to bin folder of tomcat eg. apache-tomcat-8.0.32\bin
+
+and double click startup.bat
+
+
+
+launch chrome-> go to link localhost:8080/dist
+
+for viewing outside this PC launch PCname:8080/dist.  eg. http://blrldbnj593:8080/dist/
+
+
