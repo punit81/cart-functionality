@@ -53,9 +53,9 @@ go to cart-functionality\dist\cart-functionality folder
 
 Launch CMD and run command 
 
-jar cvf dist.war *.*
+jar -cvf dist.war .
 
-copy dist.war and asset folder in tomcat webapps folder
+copy dist.war in tomcat webapps folder
 
 launch go to bin folder of tomcat eg. apache-tomcat-8.0.32\bin
 
